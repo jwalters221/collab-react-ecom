@@ -4,7 +4,11 @@ import ScrollToTop from "./component/functional/scrollToTop.jsx";
 
 import { Home } from "./views/home.jsx";
 import { Demo } from "./views/demo.jsx";
-import { Single } from "./views/single.jsx";
+import { Checkout } from "./views/checkout.jsx";
+import { Product } from "./views/product.jsx";
+import { Login } from "./views/login.jsx";
+import { Products } from "./views/products.jsx";
+
 import Store from "./store/appContext.jsx";
 
 import { Navbar } from "./component/navbar.jsx";
@@ -20,7 +24,11 @@ export class Layout extends React.Component {
 					<Switch>
 						<Route exact path="/" component={Home} />
 						<Route path="/demo" component={Demo} />
-						<Route path="/single/:theid" component={Single} />
+						<Route path="/login" component={Login} />
+						<Route path="/checkout" component={Checkout} />
+						<Route path="/products" component={Products} />
+						<Route path="/product/:theid" component={Product} />
+
 						<Route render={() => <h1>Not found!</h1>} />
 					</Switch>
 					<Footer />
