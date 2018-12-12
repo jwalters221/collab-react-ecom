@@ -1,7 +1,8 @@
 import React from "react";
+import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 
-export default class Products extends React.component {
+export class Products extends React.Component {
 	render() {
 		return (
 			<div>
@@ -11,3 +12,7 @@ export default class Products extends React.component {
 		);
 	}
 }
+
+Products.propTypes = {
+	match: PropTypes.object
+};
