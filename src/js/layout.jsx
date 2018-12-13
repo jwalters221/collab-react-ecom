@@ -13,7 +13,8 @@ import Store from "./store/appContext.jsx";
 
 import { Navbar } from "./component/navbar.jsx";
 import { Footer } from "./component/footer.jsx";
-
+import { Carousel } from "./component/carousel.jsx";
+import { Post } from "./component/post.jsx";
 //create your first component
 export class Layout extends React.Component {
 	render() {
@@ -21,6 +22,8 @@ export class Layout extends React.Component {
 			<BrowserRouter>
 				<ScrollToTop>
 					<Navbar />
+					<Carousel />
+					<Post />
 					<Switch>
 						<Route exact path="/" component={Home} />
 						<Route path="/demo" component={Demo} />
