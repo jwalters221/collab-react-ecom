@@ -1,6 +1,5 @@
 import React from "react";
-import { withRouter } from "react-router-dom";
-import { Link } from "react-router-dom";
+import { BrowserRouter, Route, Switch, Link } from "react-router-dom";
 import { Context } from "../store/appContext.jsx";
 
 export class Navbar extends React.Component {
@@ -28,17 +27,45 @@ export class Navbar extends React.Component {
 						<ul className="navbar-nav mr-auto">
 							<li className="nav-item active">
 								<a className="nav-link" href="#">
-									Home
+									<Link to="./">Home</Link>
 									<span className="sr-only">(current)</span>
 								</a>
 							</li>
 							<li className="nav-item">
 								<a className="nav-link" href="#">
-									Link
+									<Link to="./products">Products</Link>
+								</a>
+							</li>
+							<li className="nav-item">
+								<a className="nav-link" href="#">
+									<Link to="./blog">Blog</Link>
+								</a>
+							</li>
+							<li className="nav-item">
+								<a className="nav-link" href="#">
+									<Link to="./contact">Contacts</Link>
 								</a>
 							</li>
 						</ul>
 						<form className="form-inline my-2 my-lg-0">
+							<ul className="navbar-nav mr-auto">
+								<li className="nav-item active">
+									<a className="nav-link" href="#">
+										<Link to="./login">Login</Link>
+										<span className="sr-only" />
+									</a>
+								</li>
+
+								<li className="nav-item active">
+									<a className="nav-link" href="#">
+										<Link to="./checkout">
+											<i className="fas fa-shopping-cart" />
+										</Link>
+										<span className="sr-only" />
+									</a>
+								</li>
+							</ul>
+
 							<input
 								className="form-control mr-sm-2"
 								type="search"
@@ -46,7 +73,7 @@ export class Navbar extends React.Component {
 								aria-label="Search"
 							/>
 							<button
-								className="btn btn-outline-success my-2 my-sm-0"
+								className="btn btn-outline-primary my-2 my-sm-0"
 								type="submit">
 								Search
 							</button>
