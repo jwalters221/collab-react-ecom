@@ -8,6 +8,7 @@ import { Checkout } from "./views/checkout.jsx";
 import { Product } from "./views/product.jsx";
 import { LogIn } from "./views/login.jsx";
 import { Products } from "./views/products.jsx";
+import { Cart } from "./views/cart.jsx";
 
 import Store from "./store/appContext.jsx";
 
@@ -23,8 +24,6 @@ export class Layout extends React.Component {
 			<BrowserRouter>
 				<ScrollToTop>
 					<Navbar />
-					<Carousel />
-					<Post />
 					<Switch>
 						<Route exact path="/" component={Home} />
 						<Route path="/demo" component={Demo} />
@@ -32,7 +31,7 @@ export class Layout extends React.Component {
 						<Route path="/checkout" component={Checkout} />
 						<Route path="/products" component={Products} />
 						<Route path="/product/:theid" component={Product} />
-
+						<Route path="/cart" component={Cart} />
 						<Route render={() => <h1>Not found!</h1>} />
 					</Switch>
 					<Footer />
