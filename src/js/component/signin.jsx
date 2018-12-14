@@ -6,8 +6,8 @@ import { Context } from "../store/appContext.jsx";
 export class SignIn extends Component {
 	render() {
 		return (
-			<div className="text-center">
-				<div className="brand justify-content-center">
+			<div className="text-center mt-5">
+				<div className="brand mb-2">
 					<img src="https://getbootstrap.com/docs/4.0/assets/brand/bootstrap-solid.svg" />
 				</div>
 				Please sign up
