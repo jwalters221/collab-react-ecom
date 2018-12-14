@@ -66,7 +66,7 @@ export class Navbar extends React.Component {
 							<input
 								className="form-control mr-sm-2"
 								type="search"
-								placeholder="Search"
+								placeholder="Search products..."
 								aria-label="Search"
 							/>
 							<button
