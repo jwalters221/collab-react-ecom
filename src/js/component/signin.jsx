@@ -7,7 +7,7 @@ export class SignIn extends Component {
 	render() {
 		return (
 			<div className="text-center">
-				<div className="img-thumbnail">
+				<div className="brand justify-content-center">
 					<img src="https://getbootstrap.com/docs/4.0/assets/brand/bootstrap-solid.svg" />
 				</div>
 				Please sign up
