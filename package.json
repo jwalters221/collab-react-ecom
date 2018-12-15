@@ -1,5 +1,4 @@
 {
-<<<<<<< HEAD
 	"name": "react-hello-webapp",
 	"version": "1.0.1",
 	"description": "",
@@ -67,7 +66,6 @@
 		"react-router-dom": "^4.3.1",
 		"reactstrap": "^6.5.0"
 	}
-=======
   "name": "react-hello-webapp",
   "version": "1.0.1",
   "description": "",
@@ -138,5 +136,4 @@
     "react-router": "^4.3.1",
     "react-router-dom": "^4.3.1"
   }
->>>>>>> 8b8565dc76c6ae1948e1479ba9fc14c0428bf085
 }
