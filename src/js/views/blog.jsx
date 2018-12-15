@@ -92,9 +92,9 @@ export class Blog extends Component {
 					</div>
 				</div>
 
-				<div className="tab-pane ">
+				<div className="container">
 					<div className="row">
-						<div className="col-md-4">
+						<div className="col-lg-4">
 							<div className="post post-sm">
 								<div className="post-img">
 									<img
@@ -121,33 +121,60 @@ export class Blog extends Component {
 								</div>
 							</div>
 						</div>
-					</div>
-				</div>
 
-				<div className="col-md-4">
-					<div className="post post-sm">
-						<Link to="./">
-							<div className="post-img">
-								<img src="https://images.pexels.com/photos/539124/drone-camera-4k-1080-539124.jpeg" />
-							</div>
-						</Link>
-						<div className="post-body">
-							<div className="post-category">
-								<Link to="./">Fashion</Link>
-								<Link to="./">Lifestyle</Link>
-							</div>
-							<h3 className="post-title title-sm">
+						<div className="col-lg-4">
+							<div className="post post-sm">
 								<Link to="./">
-									Sed ut perspiciatis, unde omnis iste natus
-									error sit
+									<div className="post-img">
+										<img src="https://images.pexels.com/photos/539124/drone-camera-4k-1080-539124.jpeg" />
+									</div>
 								</Link>
-							</h3>
-							<ul className="post-meta">
-								<li>
-									<a>John Doe</a>
-								</li>
-								<li>20 April 2018</li>
-							</ul>
+								<div className="post-body">
+									<div className="post-category">
+										<Link to="./">Fashion</Link>
+										<Link to="./">Lifestyle</Link>
+									</div>
+									<h3 className="post-title title-sm">
+										<Link to="./">
+											Sed ut perspiciatis, unde omnis iste
+											natus error sit
+										</Link>
+									</h3>
+									<ul className="post-meta">
+										<li>
+											<a>John Doe</a>
+										</li>
+										<li>20 April 2018</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+						<div className="col-lg-4">
+							<div className="post post-sm">
+								<Link to="./">
+									<div className="post-img">
+										<img src="https://images.pexels.com/photos/539124/drone-camera-4k-1080-539124.jpeg" />
+									</div>
+								</Link>
+								<div className="post-body">
+									<div className="post-category">
+										<Link to="./">Fashion</Link>
+										<Link to="./">Lifestyle</Link>
+									</div>
+									<h3 className="post-title title-sm">
+										<Link to="./">
+											Sed ut perspiciatis, unde omnis iste
+											natus error sit
+										</Link>
+									</h3>
+									<ul className="post-meta">
+										<li>
+											<a>John Doe</a>
+										</li>
+										<li>20 April 2018</li>
+									</ul>
+								</div>
+							</div>
 						</div>
 					</div>
 				</div>
