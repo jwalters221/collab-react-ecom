@@ -1,5 +1,6 @@
-import React from "react";
-import { BrowserRouter, Route, Switch, Link } from "react-router-dom";
+import React, { Component } from "react";
+import { withRouter } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { Context } from "../store/appContext.jsx";
 
 export class Navbar extends React.Component {
@@ -7,9 +8,7 @@ export class Navbar extends React.Component {
 		return (
 			<div>
 				<nav className="navbar navbar-expand-lg navbar-light bg-light">
-					<a className="navbar-brand" href="#">
-						Navbar
-					</a>
+					<div className="navbar-brand">Navbar</div>
 					<button
 						className="navbar-toggler"
 						type="button"
@@ -26,50 +25,48 @@ export class Navbar extends React.Component {
 						id="navbarSupportedContent">
 						<ul className="navbar-nav mr-auto">
 							<li className="nav-item active">
-								<a className="nav-link" href="#">
-									<Link to="./">Home</Link>
-									<span className="sr-only">(current)</span>
-								</a>
+								<Link to="./" className="nav-link">
+									Home
+								</Link>
+								<span className="sr-only">(current)</span>
 							</li>
 							<li className="nav-item">
-								<a className="nav-link" href="#">
-									<Link to="./products">Products</Link>
-								</a>
+								<Link to="./products" className="nav-link">
+									Products
+								</Link>
 							</li>
 							<li className="nav-item">
-								<a className="nav-link" href="#">
-									<Link to="./blog">Blog</Link>
-								</a>
+								<Link to="./blog" className="nav-link">
+									Blog
+								</Link>
 							</li>
 							<li className="nav-item">
-								<a className="nav-link" href="#">
-									<Link to="./contact">Contacts</Link>
-								</a>
+								<Link to="./contacts" className="nav-link">
+									Contacts
+								</Link>
 							</li>
 						</ul>
 						<form className="form-inline my-2 my-lg-0">
 							<ul className="navbar-nav mr-auto">
 								<li className="nav-item active">
-									<a className="nav-link" href="#">
-										<Link to="./login">Login</Link>
-										<span className="sr-only" />
-									</a>
+									<Link to="./login" className="nav-link">
+										Login
+									</Link>
+									<span className="sr-only" />
 								</li>
 
 								<li className="nav-item active">
-									<a className="nav-link" href="#">
-										<Link to="./checkout">
-											<i className="fas fa-shopping-cart" />
-										</Link>
-										<span className="sr-only" />
-									</a>
+									<Link to="./checkout" className="nav-link">
+										<i className="fas fa-shopping-cart" />
+									</Link>
+									<span className="sr-only" />
 								</li>
 							</ul>
 
 							<input
 								className="form-control mr-sm-2"
 								type="search"
-								placeholder="Search"
+								placeholder="Search products..."
 								aria-label="Search"
 							/>
 							<button

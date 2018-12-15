@@ -4,6 +4,7 @@ import { Post } from "../component/post.jsx";
 import { Carousel } from "../component/carousel.jsx";
 import rigoImage from "../../img/rigo-baby.jpg";
 import "../../styles/home.css";
+import SignIn from "../component/signin.jsx";
 
 export class Home extends React.Component {
 	render() {
