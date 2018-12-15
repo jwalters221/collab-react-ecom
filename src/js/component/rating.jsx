@@ -17,6 +17,7 @@ export class Rating extends React.Component {
 			rating.push(<FontAwesomeIcon key={i} icon="star-half-alt" />);
 		}
 
+		// Places remaining empty stars
 		for (i++; i < 5; i++) {
 			rating.push(<FontAwesomeIcon key={i} icon={["far", "star"]} />);
 		}
