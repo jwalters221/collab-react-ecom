@@ -17,19 +17,16 @@ export class Blog extends Component {
 
 								<div className="post-body">
 									<div className="post-category">
-										<Link to=".">Lifestyle</Link>
+										<Link to=".">Drones</Link>
 									</div>
 									<h3 className="post-title title-lg">
 										<Link to="./">
-											Postea senserit id eos, vivendo
-											periculis ei qui
+											The farm of the future just may be
+											drone driven
 										</Link>
 									</h3>
 									<ul className="post-meta">
-										<li>
-											<Link to="./">John Doe</Link>
-										</li>
-										<li>20 April 2018</li>
+										<li />
 									</ul>
 								</div>
 							</div>
@@ -38,52 +35,45 @@ export class Blog extends Component {
 							<div className="post post-thumb">
 								<Link className="post-img" to="./">
 									<img
-										src="https://images.pexels.com/photos/539124/drone-camera-4k-1080-539124.jpeg"
+										src="https://i.imgur.com/WVBxGMg.jpg"
 										alt=""
 									/>
 								</Link>
 								<div className="post-body">
 									<div className="post-category">
-										<Link to="./">Lifestyle</Link>
+										<Link to="./">Snow Plow</Link>
 									</div>
 									<h3 className="post-title">
 										<Link to="./">
-											Sed ut perspiciatis, unde omnis iste
-											natus error sit
+											Let it snow! Let it snow!
 										</Link>
 									</h3>
 									<ul className="post-meta">
-										<li>
-											<Link to="./">John Doe</Link>
-										</li>
-										<li>20 April 2018</li>
+										<li />
 									</ul>
 								</div>
 
 								<div className="post post-thumb">
 									<Link className="post-img" to="./">
 										<img
-											src="https://images.pexels.com/photos/539124/drone-camera-4k-1080-539124.jpeg"
+											src="https://images.pexels.com/photos/1466335/pexels-photo-1466335.jpeg"
 											alt=""
 										/>
 									</Link>
 									<div className="post-body">
 										<div className="post-category">
-											<Link to="./">Fashion</Link>
-											<Link to="./">Lifestyle</Link>
+											<Link to="./">
+												Medical Marijuana
+											</Link>
 										</div>
 										<h3 className="post-title">
 											<Link to="./">
-												Mel ut impetus suscipit
-												tincidunt. Cum id ullum
-												laboramus persequeris.
+												Growing medical grade marijuana
+												in the snow!
 											</Link>
 										</h3>
 										<ul className="post-meta">
-											<li>
-												<Link to="./">John Doe</Link>
-											</li>
-											<li>20 April 2018</li>
+											<li />
 										</ul>
 									</div>
 								</div>
@@ -92,62 +82,77 @@ export class Blog extends Component {
 					</div>
 				</div>
 
-				<div className="tab-pane ">
+				<div className="container">
+					<div className="text-left post-category">
+						<h4>Recent Posts</h4>
+					</div>
 					<div className="row">
-						<div className="col-md-4">
+						<div className="col-lg-4">
 							<div className="post post-sm">
 								<div className="post-img">
 									<img
-										src="https://images.pexels.com/photos/539124/drone-camera-4k-1080-539124.jpeg"
+										src="https://i.imgur.com/o8qqxQB.jpg"
 										alt=""
 									/>
 								</div>
 								<div className="post-body">
 									<div className="post-category">
-										<Link to="./">Lifestyle</Link>
+										<Link to="./">Snow Plow</Link>
 									</div>
 									<h3 className="post-title title-sm">
-										<Link to="./">
-											Postea senserit id eos, vivendo
-											periculis ei qui
-										</Link>
+										<Link to="./">New year new models</Link>
 									</h3>
 									<ul className="post-meta">
-										<li>
-											<Link to="./">John Doe</Link>
-										</li>
-										<li>20 April 2018</li>
+										<li />
 									</ul>
 								</div>
 							</div>
 						</div>
-					</div>
-				</div>
 
-				<div className="col-md-4">
-					<div className="post post-sm">
-						<Link to="./">
-							<div className="post-img">
-								<img src="https://images.pexels.com/photos/539124/drone-camera-4k-1080-539124.jpeg" />
-							</div>
-						</Link>
-						<div className="post-body">
-							<div className="post-category">
-								<Link to="./">Fashion</Link>
-								<Link to="./">Lifestyle</Link>
-							</div>
-							<h3 className="post-title title-sm">
+						<div className="col-lg-4">
+							<div className="post post-sm">
 								<Link to="./">
-									Sed ut perspiciatis, unde omnis iste natus
-									error sit
+									<div className="post-img">
+										<img src="https://blog.reneerouleau.com/wp-content/uploads/2015/06/Renee-Rouleau-Apple-Skincare-Experiment-403x260.jpg" />
+									</div>
 								</Link>
-							</h3>
-							<ul className="post-meta">
-								<li>
-									<a>John Doe</a>
-								</li>
-								<li>20 April 2018</li>
-							</ul>
+								<div className="post-body">
+									<div className="post-category">
+										<Link to="./">Mens Health</Link>
+									</div>
+									<h3 className="post-title title-sm">
+										<Link to="./">
+											Cold weather calls for skin care too
+										</Link>
+									</h3>
+									<ul className="post-meta">
+										<li />
+									</ul>
+								</div>
+							</div>
+						</div>
+						<div className="col-lg-4">
+							<div className="post post-sm">
+								<Link to="./">
+									<div className="post-img">
+										<img src="https://images.pexels.com/photos/274939/pexels-photo-274939.jpeg" />
+									</div>
+								</Link>
+								<div className="post-body">
+									<div className="post-category">
+										<Link to="./">Drones</Link>
+									</div>
+									<h3 className="post-title title-sm">
+										<Link to="./">
+											FCC rules for surprising
+											deregulation
+										</Link>
+									</h3>
+									<ul className="post-meta">
+										<li />
+									</ul>
+								</div>
+							</div>
 						</div>
 					</div>
 				</div>
