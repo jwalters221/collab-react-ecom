@@ -21,11 +21,11 @@ export class Cart extends React.Component {
 					<div className="card-header bg-dark text-light">
 						<i className="fa fa-shopping-cart" aria-hidden="true" />
 						&nbsp;Shopping cart
-						<a
-							href=""
+						<Link
+							to="./products"
 							className="btn btn-outline-info btn-sm pull-right">
-							Continue shopping
-						</a>
+							Continue Shopping
+						</Link>
 						<div className="clearfix" />
 					</div>
 					<div className="card-body">
@@ -165,11 +165,11 @@ export class Cart extends React.Component {
 						<ColoredLine color="gray" />
 
 						<div className="pull-right">
-							<a
-								href=""
+							<Link
+								to="./products"
 								className="btn btn-outline-secondary pull-right">
 								Update shopping cart
-							</a>
+							</Link>
 						</div>
 					</div>
 					<div className="card-footer">
@@ -192,9 +192,11 @@ export class Cart extends React.Component {
 							</div>
 						</div>
 						<div className="pull-right margin-10">
-							<a href="" className="btn btn-success pull-right">
+							<Link
+								to="./products"
+								className="btn btn-success pull-right">
 								Checkout
-							</a>
+							</Link>
 							<div className="pull-right margin-5">
 								Total price: <b>$50.00</b>
 							</div>
@@ -208,8 +210,4 @@ export class Cart extends React.Component {
 
 Cart.propTypes = {
 	match: PropTypes.object
-};
-
-ColoredLine.propTypes = {
-	color: PropTypes.string
 };
