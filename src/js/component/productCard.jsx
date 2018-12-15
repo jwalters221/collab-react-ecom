@@ -16,39 +16,42 @@ class ProductCard extends React.Component {
 		return (
 			<div className="container">
 				<div className="row">
-					<div className="col-lg-4 col-md-6 mb-4">
-						<Context.Consumer>
-							{({ store, actions }) => {
-								return store.products.map((item, index) => {
-									return (
-										<div className="card" key={index}>
-											<img
-												className="card-img-top"
-												src={item.image}
-												alt="Card image cap"
-											/>
-											<div className="card-body">
-												<h5 className="card-title">
-													{item.name}
-												</h5>
-												<p className="card-text">
-													{item.description}
-												</p>
-												<p className="card-text">
-													<small className="text-muted">
-														{item.rating}
-													</small>
-												</p>
-											</div>
-											<div className="card-footer bg-transparent">
-												{item.price}
-											</div>
+					<Context.Consumer>
+						{({ store, actions }) => {
+							return store.products.map((item, index) => {
+								return (
+									<div className="card col-lg-4" key={index}>
+										<div className="card-header bg-transparent ">
+											{item.category}
 										</div>
-									);
-								});
-							}}
-						</Context.Consumer>
-					</div>
+										<img
+											className="card-img-top"
+											src={item.image}
+											alt="Card image cap"
+										/>
+
+										<div className="card-body">
+											<h5 className="card-title">
+												{item.name}
+											</h5>
+											<p className="card-text">
+												{item.description}
+											</p>
+											<p className="card-text">
+												<small className="text-muted">
+													Rating:
+													{item.rating}
+												</small>
+											</p>
+										</div>
+										<div className="card-footer bg-transparent">
+											{item.price}
+										</div>
+									</div>
+								);
+							});
+						}}
+					</Context.Consumer>
 				</div>
 			</div>
 		);
