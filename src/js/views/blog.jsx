@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { withRouter } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { Context } from "../store/appContext.jsx";
+import "../../styles/blog.css";
 
 export class Blog extends Component {
 	render() {
@@ -83,7 +84,8 @@ export class Blog extends Component {
 				</div>
 
 				<div className="container">
-					<div className="text-left post-category">
+					<div className="text-left ">
+						<hr className="featurette-divider" />
 						<h4>Recent Posts</h4>
 					</div>
 					<div className="row">
