@@ -6,17 +6,18 @@ export class Rating extends React.Component {
 	render() {
 		const stars = this.props.stars;
 		const rating = [];
-		for (var i = 0; i < stars; i++) {
+		for (var i = 0; i < stars - 1; i++) {
 			rating.push(<FontAwesomeIcon key={i} icon="star" />);
 		}
 
 		// Checks partial ratings to fill a half star
-		if (stars % 1 > 0) {
-			rating.pop();
+		if (stars % 1 == 0) {
+			rating.push(<FontAwesomeIcon key={i} icon="star" />);
+		} else {
 			rating.push(<FontAwesomeIcon key={i} icon="star-half-alt" />);
 		}
 
-		for (""; i < 5; i++) {
+		for (i++; i < 5; i++) {
 			rating.push(<FontAwesomeIcon key={i} icon={["far", "star"]} />);
 		}
 

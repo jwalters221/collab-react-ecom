@@ -40,7 +40,9 @@ export class Product extends React.Component {
 										</div>
 									</div>
 									<div className="row">
-										<Rating stars={product.rating} />
+										<div className="col">
+											<Rating stars={product.rating} />
+										</div>
 									</div>
 								</div>
 							</div>
