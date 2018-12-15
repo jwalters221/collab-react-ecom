@@ -2,15 +2,22 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-export class Rating extends Component {
+export class Rating extends React.Component {
 	render() {
 		const stars = this.props.stars;
 		const rating = [];
 		for (var i = 0; i < stars; i++) {
-			rating.push(<FontAwesomeIcon key={i} icon="star" spin />);
-		}
-		for (""; i < 5; i++) {
 			rating.push(<FontAwesomeIcon key={i} icon="star" />);
+		}
+
+		// Checks partial ratings to fill a half star
+		if (stars % 1 > 0) {
+			rating.pop();
+			rating.push(<FontAwesomeIcon key={i} icon="star-half-alt" />);
+		}
+
+		for (""; i < 5; i++) {
+			rating.push(<FontAwesomeIcon key={i} icon={["far", "star"]} />);
 		}
 
 		return <div>{rating}</div>;
