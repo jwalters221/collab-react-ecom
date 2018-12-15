@@ -6,7 +6,7 @@ import { Context } from "../store/appContext.jsx";
 class Featured extends React.Component {
 	render() {
 		return (
-			<div className="container">
+			<div className="container mt-5">
 				<Context.Consumer>
 					{({ store, actions }) => {
 						let randDrone = Math.floor(Math.random() * 4);

@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { Post } from "../component/post.jsx";
-import { Carousel } from "../component/carousel.jsx";
+import CarouselHome from "../component/carousel.jsx";
 import rigoImage from "../../img/ecommerce.jpg";
 import "../../styles/home.css";
 import SignIn from "../component/signin.jsx";
@@ -10,7 +10,7 @@ export class Home extends React.Component {
 	render() {
 		return (
 			<React.Fragment>
-				<Carousel />
+				<CarouselHome />
 				<Post />
 
 				<hr className="featurette-divider" />
