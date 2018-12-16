@@ -60,7 +60,12 @@ class Featured extends React.Component {
 											<p className="mb-0">
 												<Link
 													className="btn btn-success"
-													to="#"
+													to={
+														"/product/" +
+														store.products[
+															randDrone
+														].sku
+													}
 													role="button">
 													View details &raquo;
 												</Link>
@@ -104,7 +109,11 @@ class Featured extends React.Component {
 											<p className="mb-0">
 												<Link
 													className="btn btn-success"
-													to="#"
+													to={
+														"/product/" +
+														store.products[randSnow]
+															.sku
+													}
 													role="button">
 													View details &raquo;
 												</Link>
@@ -148,7 +157,11 @@ class Featured extends React.Component {
 											<p className="mb-0">
 												<Link
 													className="btn btn-success"
-													to="#"
+													to={
+														"/product/" +
+														store.products[randMale]
+															.sku
+													}
 													role="button">
 													View details &raquo;
 												</Link>
@@ -192,7 +205,11 @@ class Featured extends React.Component {
 											<p className="mb-0">
 												<Link
 													className="btn btn-success"
-													to="#"
+													to={
+														"/product/" +
+														store.products[randMed]
+															.sku
+													}
 													role="button">
 													View details &raquo;
 												</Link>
