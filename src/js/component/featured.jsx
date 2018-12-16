@@ -2,6 +2,7 @@ import React from "react";
 import { withRouter } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { Context } from "../store/appContext.jsx";
+import { Rating } from "./rating.jsx";
 
 class Featured extends React.Component {
 	render() {
@@ -52,8 +53,12 @@ class Featured extends React.Component {
 											${store.products[randDrone].price}
 										</p>
 										<p className="font-weight-light">
-											Rating:
-											{store.products[randDrone].rating}
+											<Rating
+												stars={
+													store.products[randDrone]
+														.rating
+												}
+											/>
 										</p>
 
 										<div className="card-footer bg-transparent ">
@@ -102,8 +107,12 @@ class Featured extends React.Component {
 											${store.products[randSnow].price}
 										</p>
 										<p className="font-weight-light">
-											Rating:
-											{store.products[randSnow].rating}
+											<Rating
+												stars={
+													store.products[randSnow]
+														.rating
+												}
+											/>
 										</p>
 										<div className="card-footer bg-transparent ">
 											<p className="mb-0">
@@ -150,8 +159,12 @@ class Featured extends React.Component {
 											${store.products[randMale].price}
 										</p>
 										<p className="font-weight-light">
-											Rating:
-											{store.products[randMale].rating}
+											<Rating
+												stars={
+													store.products[randMale]
+														.rating
+												}
+											/>
 										</p>
 										<div className="card-footer bg-transparent ">
 											<p className="mb-0">
@@ -198,8 +211,12 @@ class Featured extends React.Component {
 											${store.products[randMed].price}
 										</p>
 										<p className="font-weight-light">
-											Rating:
-											{store.products[randMed].rating}
+											<Rating
+												stars={
+													store.products[randMed]
+														.rating
+												}
+											/>
 										</p>
 										<div className="card-footer bg-transparent ">
 											<p className="mb-0">
