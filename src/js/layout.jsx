@@ -16,7 +16,7 @@ import Store from "./store/appContext.jsx";
 import { Navbar } from "./component/navbar.jsx";
 import { Footer } from "./component/footer.jsx";
 import { Carousel } from "./component/carousel.jsx";
-import { Post } from "./component/post.jsx";
+
 import { SignIn } from "./component/signin.jsx";
 //create your first component
 export class Layout extends React.Component {
