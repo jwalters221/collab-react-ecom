@@ -24,6 +24,10 @@ export class Cart extends React.Component {
 					<div className="card-body">
 						<Context.Consumer>
 							{({ store, actions }) => {
+								let cartTotal = 0;
+								store.cart.forEach(item => {
+									cartTotal += item.price * item.quantity;
+								});
 								return store.cart.map((item, index) => {
 									return (
 										<CartItem

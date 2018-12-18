@@ -22,14 +22,6 @@ export class CartItem extends React.Component {
 		};
 	}
 
-	qtyChange = change => {
-		if (change == "add") {
-			alert("hi");
-
-			//this.setState.quantity = this.state.quantity + 1;
-		}
-	};
-
 	render() {
 		return (
 			<div>
@@ -75,9 +67,6 @@ export class CartItem extends React.Component {
 													type="button"
 													value="+"
 													className="plus"
-													onClick={this.qtyChange(
-														"add"
-													)}
 												/>
 												<input
 													type="number"
