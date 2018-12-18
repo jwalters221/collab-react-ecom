@@ -15,26 +15,31 @@ import {
 const items = [
 	{
 		src:
-			"https://images.pexels.com/photos/539124/drone-camera-4k-1080-539124.jpeg",
+			"https://images.pexels.com/photos/1625876/pexels-photo-1625876.png?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
 		altText: "Slide 1",
-		caption: "Best Shop Ever",
+		caption: "A different point of view",
 		content: "Electro Med Plow",
 
-		buttonLink: ""
+		buttonLink: "/products",
+		buttonCaption: "Shop Now"
 	},
 	{
 		src:
 			"https://images.pexels.com/photos/352091/pexels-photo-352091.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
 		altText: "Slide 2",
-		caption: "Slide 2",
-		buttonLink: ""
+		caption: "on the market",
+		content: "Best Snowplows ",
+		buttonLink: "/products",
+		buttonCaption: "Shop Now"
 	},
 	{
 		src:
-			"https://images.pexels.com/photos/4458/cup-mug-desk-office.jpg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
-		altText: "Visit Our Blog Page",
-		caption: "Slide 3",
-		buttonLink: "/blog"
+			"https://images.pexels.com/photos/34153/pexels-photo.jpg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+		altText: "Visit Our New Blog Page",
+		caption: "and check all the news",
+		content: "Visit Our Blog",
+		buttonLink: "/blog",
+		buttonCaption: "Go to Blog"
 	}
 ];
 
@@ -80,6 +85,14 @@ class CarouselHome extends React.Component {
 		this.setState({ activeIndex: newIndex });
 	}
 
+	displayButton(index) {
+		if (this.state.activeIndex === 0) {
+			return "d-none";
+		} else {
+			return "buttonSlide";
+		}
+	}
+
 	render() {
 		const { activeIndex } = this.state;
 
@@ -90,17 +103,19 @@ class CarouselHome extends React.Component {
 					onExited={this.onExited}
 					key={item.src}>
 					<img src={item.src} alt={item.altText} />
-					<div className="carousel-caption text-left">
+					<div className="carousel-caption mb-5 custom-caption">
 						<CarouselCaption
 							captionText={item.caption}
 							captionHeader={item.content}
 						/>
+					</div>
 
-						<p className="buttonSlide ">
-							<Link to={item.buttonLink}>
-								<Button color="primary">primary</Button>{" "}
-							</Link>
-						</p>
+					<div className={this.displayButton(this.activeIndex)}>
+						<Link to={item.buttonLink}>
+							<Button color="success" pointer="cursor">
+								{item.buttonCaption}
+							</Button>{" "}
+						</Link>
 					</div>
 				</CarouselItem>
 			);
