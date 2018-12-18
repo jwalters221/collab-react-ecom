@@ -73,13 +73,12 @@ export class CartItem extends React.Component {
 													}
 												/>
 												<input
+													readOnly
 													type="number"
 													step="1"
 													max="99"
 													min="1"
-													defaultValue={
-														this.props.quantity
-													}
+													value={this.props.quantity}
 													title="Qty"
 													className="qty"
 													size="4"
