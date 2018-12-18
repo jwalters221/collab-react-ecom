@@ -7,7 +7,7 @@ const getState = ({ getStore, setStore }) => {
 					sku: "5158601",
 					image:
 						"https://pisces.bbystatic.com/image2/BestBuy_US/images/products/5158/5158601_sd.jpg;maxHeight=640;maxWidth=550",
-					name: "Sky Viper",
+					name: "Sky Viper Drone",
 					description:
 						"Set up a custom race course and compete against your " +
 						"friends with the Sky Viper hover racer. This quadcopter flies at a maximum speed " +
@@ -21,7 +21,7 @@ const getState = ({ getStore, setStore }) => {
 					sku: "5896802",
 					image:
 						"https://pisces.bbystatic.com/image2/BestBuy_US/images/products/5896/5896802_sd.jpg;maxHeight=640;maxWidth=550",
-					name: "DJI Spark",
+					name: "DJI Spark Drone",
 					description:
 						"Serve up stunning shots from the air with this DJI Spark drone. An integrated camera lets you take still photographs or 1080p HD video to share with friends and family, and an automatic stabilizer makes each shot a keeper. This DJI Spark drone features a 16-minute flight time before needing a recharge, providing time for dozens of pics.",
 					price: "359.99",
@@ -32,7 +32,7 @@ const getState = ({ getStore, setStore }) => {
 					sku: "5937206",
 					image:
 						"https://pisces.bbystatic.com/image2/BestBuy_US/images/products/5937/5937206_sd.jpg;maxHeight=640;maxWidth=550",
-					name: "Protocol Dura VR Racer",
+					name: "Protocol VR Racer Drone",
 					description:
 						"Stream live video while you take photos with this Dura VR drone. For a more realistic immersive experience, download the app and plug the VR headset into a phone. Users of any skill level can learn to race this Dura VR drone thanks to its three speed settings and self-stabilizing electronics.",
 					price: "64.99",
@@ -43,7 +43,7 @@ const getState = ({ getStore, setStore }) => {
 					sku: "5937208",
 					image:
 						"https://pisces.bbystatic.com/image2/BestBuy_US/images/products/5937/5937208_sd.jpg;maxHeight=640;maxWidth=550",
-					name: "Protocol Vento Wifi",
+					name: "Protocol Vento Wifi Drone",
 					description:
 						"Use the onboard altitude sensor to automatically launch, hover and land this Vento drone. Crash-resistant material helps it survive a tumble, and you can stream live video via Wi-Fi with the device's built-in 480p camera and a smartphone. Fold this Vento drone to take it with you to the next destination.",
 					price: "84.99",
@@ -97,8 +97,8 @@ const getState = ({ getStore, setStore }) => {
 					name: "Apple Vitamin C Lotion",
 					description:
 						"Visibly correct uneven skin tone, reduce appearance of dark spots & discoloration with the exfoliating power of malic acid from organic green apples, peptides, alpha lipoic acid, CoQ10 and Vitamin C. For all skin types except sensitive / rosacea skin.",
-					price: "",
-					rating: ""
+					price: "29.99",
+					rating: "4.5"
 				},
 				{
 					category: "male products",

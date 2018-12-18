@@ -13,18 +13,25 @@ export class Cart extends React.Component {
 					<div className="card-header bg-dark text-light">
 						<i className="fa fa-shopping-cart" aria-hidden="true" />
 						&nbsp;Shopping cart
-						<Link
+						<div className="pull-right">Electro Med Plow</div>
+						{/*<Link
 							to="./products"
 							className="btn btn-outline-info btn-sm pull-right">
 							Continue Shopping
-						</Link>
+						</Link>*/}
 						<div className="clearfix" />
 					</div>
 					<div className="card-body">
 						<Context.Consumer>
 							{({ store, actions }) => {
 								return store.cart.map((item, index) => {
-									return <CartItem key={index} />;
+									return (
+										<CartItem
+											sku={item.sku}
+											key={index}
+											quantity={item.quantity}
+										/>
+									);
 								});
 							}}
 						</Context.Consumer>
@@ -34,8 +41,8 @@ export class Cart extends React.Component {
 						<div className="pull-right">
 							<Link
 								to="./products"
-								className="btn btn-outline-secondary pull-right">
-								Update shopping cart
+								className="btn btn-outline-info pull-right">
+								Continue Shopping
 							</Link>
 						</div>
 					</div>
