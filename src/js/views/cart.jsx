@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { Context } from "../store/appContext.jsx";
 import { CartItem } from "../component/cartItem.jsx";
 import "../../styles/cart.css";
+import { withRouter } from "react-router-dom";
 
 export class Cart extends React.Component {
 	render() {
@@ -34,6 +35,7 @@ export class Cart extends React.Component {
 											sku={item.sku}
 											key={index}
 											quantity={item.quantity}
+											history={this.props.history}
 										/>
 									);
 								});
@@ -79,17 +81,20 @@ export class Cart extends React.Component {
 							<Context.Consumer>
 								{({ store, actions }) => {
 									let cartTotal = 0;
-									store.cart.forEach((item, index) => {
-										let product = store.products.find(
-											products => {
-												return (
-													products.sku === item.sku
-												);
-											}
-										);
-										cartTotal +=
-											product.price * item.quantity;
-									});
+									store.cart.forEach(
+										(item, index, history) => {
+											let product = store.products.find(
+												products => {
+													return (
+														products.sku ===
+														item.sku
+													);
+												}
+											);
+											cartTotal +=
+												product.price * item.quantity;
+										}
+									);
 									return (
 										<div className="pull-right margin-5">
 											Total price: <b>${cartTotal}</b>
@@ -106,5 +111,6 @@ export class Cart extends React.Component {
 }
 
 Cart.propTypes = {
-	match: PropTypes.object
+	match: PropTypes.object,
+	history: PropTypes.history
 };

@@ -17,9 +17,6 @@ const ColoredLine = () => (
 export class CartItem extends React.Component {
 	constructor(props) {
 		super(props);
-		this.state = {
-			quantity: this.props.quantity
-		};
 	}
 
 	render() {
@@ -67,6 +64,13 @@ export class CartItem extends React.Component {
 													type="button"
 													value="+"
 													className="plus"
+													onClick={() =>
+														actions.updateQuantity(
+															this.props.sku,
+															"add",
+															this.props.history
+														)
+													}
 												/>
 												<input
 													type="number"
@@ -74,7 +78,7 @@ export class CartItem extends React.Component {
 													max="99"
 													min="1"
 													defaultValue={
-														this.state.quantity
+														this.props.quantity
 													}
 													title="Qty"
 													className="qty"
@@ -111,5 +115,6 @@ export class CartItem extends React.Component {
 
 CartItem.propTypes = {
 	sku: PropTypes.string,
-	quantity: PropTypes.number
+	quantity: PropTypes.number,
+	history: PropTypes.object
 };

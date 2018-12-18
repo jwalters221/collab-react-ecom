@@ -227,7 +227,22 @@ const getState = ({ getStore, setStore }) => {
 				}
 			]
 		},
-		actions: {}
+		actions: {
+			updateQuantity: (sku, math, history) => {
+				const store = getStore();
+
+				let cartItem = store.cart.find(products => {
+					return products.sku === sku;
+				});
+				if (math === "add") {
+					cartItem.quantity = cartItem.quantity + 1;
+				}
+
+				setStore({ store: store });
+
+				history.push("/cart");
+			}
+		}
 	};
 };
 
