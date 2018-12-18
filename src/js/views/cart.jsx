@@ -75,9 +75,28 @@ export class Cart extends React.Component {
 								className="btn btn-success pull-right">
 								Checkout
 							</Link>
-							<div className="pull-right margin-5">
-								Total price: <b>$50.00</b>
-							</div>
+
+							<Context.Consumer>
+								{({ store, actions }) => {
+									let cartTotal = 0;
+									store.cart.forEach((item, index) => {
+										let product = store.products.find(
+											products => {
+												return (
+													products.sku === item.sku
+												);
+											}
+										);
+										cartTotal +=
+											product.price * item.quantity;
+									});
+									return (
+										<div className="pull-right margin-5">
+											Total price: <b>${cartTotal}</b>
+										</div>
+									);
+								}}
+							</Context.Consumer>
 						</div>
 					</div>
 				</div>
