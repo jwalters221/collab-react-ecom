@@ -2,6 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import { Context } from "../store/appContext.jsx";
+import { CheckoutCart } from "../component/checkoutCart.jsx";
 import Modal from "../component/modal.jsx";
 
 export class Checkout extends React.Component {
@@ -18,43 +19,58 @@ export class Checkout extends React.Component {
 					<div className="col-md-4 order-md-2 mb-4">
 						<h4 className="d-flex justify-content-between align-items-center mb-3">
 							<span className="text-muted">Your cart</span>
-							<span className="badge badge-secondary badge-pill">
-								3
-							</span>
+							<Context.Consumer>
+								{({ store, actions }) => {
+									let cartLength = store.cart.length;
+									return (
+										<span className="badge badge-secondary badge-pill">
+											{cartLength}
+										</span>
+									);
+								}}
+							</Context.Consumer>
 						</h4>
 						<ul className="list-group mb-3">
-							<li className="list-group-item d-flex justify-content-between lh-condensed">
-								<div>
-									<h6 className="my-0">Product name</h6>
-									<small className="text-muted">
-										Brief description
-									</small>
-								</div>
-								<span className="text-muted">$12</span>
-							</li>
-							<li className="list-group-item d-flex justify-content-between lh-condensed">
-								<div>
-									<h6 className="my-0">Second product</h6>
-									<small className="text-muted">
-										Brief description
-									</small>
-								</div>
-								<span className="text-muted">$8</span>
-							</li>
-							<li className="list-group-item d-flex justify-content-between lh-condensed">
-								<div>
-									<h6 className="my-0">Third item</h6>
-									<small className="text-muted">
-										Brief description
-									</small>
-								</div>
-								<span className="text-muted">$5</span>
-							</li>
+							<Context.Consumer>
+								{({ store, actions }) => {
+									return store.cart.map((item, index) => {
+										return (
+											<CheckoutCart
+												sku={item.sku}
+												key={index}
+												quantity={item.quantity}
+												history={this.props.history}
+											/>
+										);
+									});
+								}}
+							</Context.Consumer>
 
-							<li className="list-group-item d-flex justify-content-between">
-								<span>Total (USD)</span>
-								<strong>$25</strong>
-							</li>
+							<Context.Consumer>
+								{({ store, actions }) => {
+									let cartTotal = 0;
+									store.cart.forEach(
+										(item, index, history) => {
+											let product = store.products.find(
+												products => {
+													return (
+														products.sku ===
+														item.sku
+													);
+												}
+											);
+											cartTotal +=
+												product.price * item.quantity;
+										}
+									);
+									return (
+										<li className="list-group-item d-flex justify-content-between">
+											<span>Total (USD)</span>
+											<strong>${cartTotal}</strong>
+										</li>
+									);
+								}}
+							</Context.Consumer>
 						</ul>
 					</div>
 
@@ -225,5 +241,6 @@ export class Checkout extends React.Component {
 }
 
 Checkout.propTypes = {
-	match: PropTypes.object
+	match: PropTypes.object,
+	history: PropTypes.object
 };
