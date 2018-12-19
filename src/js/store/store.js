@@ -241,6 +241,22 @@ const getState = ({ getStore, setStore }) => {
 				setStore({ store: store });
 
 				history.push("/cart");
+			},
+
+			addProductToCart: (sku, quantity) => {
+				const store = getStore();
+
+				let index = store.cart.findIndex(products => {
+					return products.sku == sku;
+				});
+				if (index == -1) {
+					store.cart.push({
+						sku: sku,
+						quantity: quantity
+					});
+				} else if (quantity > 0) {
+					store.cart[index].quantity += quantity;
+				}
 			}
 		}
 	};
