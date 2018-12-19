@@ -28,38 +28,33 @@ export class Navbar extends React.Component {
 						id="navbarSupportedContent">
 						<ul className="navbar-nav mr-auto">
 							<li className="nav-item active">
-								<Link to="./" className="nav-link">
+								<Link to="/" className="nav-link">
 									Home
 								</Link>
 								<span className="sr-only">(current)</span>
 							</li>
 							<li className="nav-item">
-								<Link to="./products" className="nav-link">
+								<Link to="/products" className="nav-link">
 									Products
 								</Link>
 							</li>
 							<li className="nav-item">
-								<Link to="./blog" className="nav-link">
+								<Link to="/blog" className="nav-link">
 									Blog
-								</Link>
-							</li>
-							<li className="nav-item">
-								<Link to="./contacts" className="nav-link">
-									Contacts
 								</Link>
 							</li>
 						</ul>
 						<form className="form-inline my-2 my-lg-0">
 							<ul className="navbar-nav mr-auto">
 								<li className="nav-item active">
-									<Link to="./login" className="nav-link">
+									<Link to="/login" className="nav-link">
 										Login
 									</Link>
 									<span className="sr-only" />
 								</li>
 
 								<li className="nav-item active">
-									<Link to="./cart" className="nav-link">
+									<Link to="/cart" className="nav-link">
 										<i className="fas fa-shopping-cart" />
 									</Link>
 									<span className="sr-only" />
@@ -68,11 +63,25 @@ export class Navbar extends React.Component {
 
 							<Context.Consumer>
 								{({ store, actions }) => {
-									let cartLength = store.cart.length;
+									let cartTotal = 0;
+									store.cart.forEach(
+										(item, index, history) => {
+											let product = store.products.find(
+												products => {
+													return (
+														products.sku ===
+														item.sku
+													);
+												}
+											);
+											cartTotal +=
+												product.price * item.quantity;
+										}
+									);
 									return (
 										<div className="text-wrap">
 											<span className="small badge badge-danger">
-												{cartLength}
+												{cartTotal}
 											</span>
 										</div>
 									);
