@@ -56,24 +56,18 @@ export class Navbar extends React.Component {
 								</li>
 
 								<li className="nav-item active">
-									<Link to="./checkout" className="nav-link">
+									<Link to="./cart" className="nav-link">
 										<i className="fas fa-shopping-cart" />
 									</Link>
 									<span className="sr-only" />
 								</li>
 							</ul>
 
-							<input
-								className="form-control mr-sm-2"
-								type="search"
-								placeholder="Search products..."
-								aria-label="Search"
-							/>
-							<button
-								className="btn btn-outline-primary my-2 my-sm-0"
-								type="submit">
-								Search
-							</button>
+							<div className="text-wrap">
+								<span className="small badge badge-danger">
+									0
+								</span>
+							</div>
 						</form>
 					</div>
 				</nav>

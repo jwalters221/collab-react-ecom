@@ -14,8 +14,8 @@ export class BlogPost extends Component {
 						{({ store, actions }) => {
 							return store.blog.map((item, index) => {
 								return (
-									<React.Fragment>
-										<div className="col-lg-12" key={index}>
+									<React.Fragment key={index}>
+										<div className="col-lg-12">
 											<div className="post2-img mb-2">
 												<img src={item.image} />
 											</div>
