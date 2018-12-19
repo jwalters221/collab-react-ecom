@@ -246,9 +246,6 @@ const getState = ({ getStore, setStore }) => {
 			addProductToCart: (sku, quantity) => {
 				const store = getStore();
 
-				// Null values should be assumed as 1 unit added
-				if (quantity.length == 0) quantity = 1;
-
 				let index = store.cart.findIndex(products => {
 					return products.sku == sku;
 				});
