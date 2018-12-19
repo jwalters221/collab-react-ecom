@@ -236,6 +236,8 @@ const getState = ({ getStore, setStore }) => {
 				});
 				if (math === "add") {
 					cartItem.quantity = cartItem.quantity + 1;
+				} else if (math === "minus" && cartItem.quantity > 0) {
+					cartItem.quantity = cartItem.quantity - 1;
 				}
 
 				setStore({ store: store });
@@ -257,6 +259,16 @@ const getState = ({ getStore, setStore }) => {
 				} else if (quantity > 0) {
 					store.cart[index].quantity += quantity;
 				}
+			},
+
+			removeItemFromCart: (index, history) => {
+				const store = getStore();
+
+				store.cart.splice(index, 1);
+
+				setStore({ store: store });
+
+				history.push("/cart");
 			}
 		}
 	};

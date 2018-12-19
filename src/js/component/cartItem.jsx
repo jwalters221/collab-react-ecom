@@ -87,13 +87,27 @@ export class CartItem extends React.Component {
 													type="button"
 													value="-"
 													className="minus"
+													onClick={() =>
+														actions.updateQuantity(
+															this.props.sku,
+															"minus",
+															this.props.history
+														)
+													}
 												/>
 											</div>
 										</div>
 										<div className="col-2 col-sm-2 col-md-2 text-right">
 											<button
 												type="button"
-												className="btn btn-outline-danger btn-xs">
+												value="-"
+												className="btn btn-outline-danger btn-xs"
+												onClick={() =>
+													actions.removeItemFromCart(
+														this.props.index,
+														this.props.history
+													)
+												}>
 												<i
 													className="fa fa-trash"
 													aria-hidden="true"
@@ -115,5 +129,6 @@ export class CartItem extends React.Component {
 CartItem.propTypes = {
 	sku: PropTypes.string,
 	quantity: PropTypes.number,
-	history: PropTypes.object
+	history: PropTypes.object,
+	index: PropTypes.number
 };

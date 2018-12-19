@@ -28,6 +28,7 @@ export class Cart extends React.Component {
 								return store.cart.map((item, index) => {
 									return (
 										<CartItem
+											index={index}
 											sku={item.sku}
 											key={index}
 											quantity={item.quantity}
@@ -69,7 +70,7 @@ export class Cart extends React.Component {
 						</div>
 						<div className="pull-right margin-10">
 							<Link
-								to="./products"
+								to="./checkout"
 								className="btn btn-success pull-right">
 								Checkout
 							</Link>
