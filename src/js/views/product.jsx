@@ -8,7 +8,7 @@ export class Product extends React.Component {
 	render() {
 		return (
 			<Context.Consumer>
-				{({ store }) => {
+				{({ store, actions }) => {
 					var product = store.products.find(item => {
 						return item.sku == this.props.match.params.theid;
 					});
@@ -32,11 +32,37 @@ export class Product extends React.Component {
 											<h3>${product.price}</h3>
 										</div>
 										<div className="col my-4">
-											<button
-												type="button"
-												className="btn btn-primary">
-												Add to Cart
-											</button>
+											<form>
+												<div className="form-group row">
+													<label className="col-form-label">
+														Quantity
+													</label>
+													<div className="col-4">
+														<input
+															type="quantity"
+															className="form-control"
+															id="quantity"
+															defaultValue="1"
+															placeholder="0"
+														/>
+													</div>
+													<button
+														type="button"
+														className="btn btn-primary mb-2"
+														onClick={() =>
+															actions.addProductToCart(
+																product.sku,
+																parseInt(
+																	document.getElementById(
+																		"quantity"
+																	).value
+																)
+															)
+														}>
+														Add to Cart
+													</button>
+												</div>
+											</form>
 										</div>
 									</div>
 									<div className="row">

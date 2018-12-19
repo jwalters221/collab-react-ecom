@@ -241,6 +241,25 @@ const getState = ({ getStore, setStore }) => {
 				setStore({ store: store });
 
 				history.push("/cart");
+			},
+
+			addProductToCart: (sku, quantity) => {
+				const store = getStore();
+
+				// Null values should be assumed as 1 unit added
+				if (quantity.length == 0) quantity = 1;
+
+				let index = store.cart.findIndex(products => {
+					return products.sku == sku;
+				});
+				if (index == -1) {
+					store.cart.push({
+						sku: sku,
+						quantity: quantity
+					});
+				} else if (quantity > 0) {
+					store.cart[index].quantity += quantity;
+				}
 			}
 		}
 	};
