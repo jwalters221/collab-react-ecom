@@ -68,25 +68,11 @@ export class Navbar extends React.Component {
 
 							<Context.Consumer>
 								{({ store, actions }) => {
-									let cartTotal = 0;
-									store.cart.forEach(
-										(item, index, history) => {
-											let product = store.products.find(
-												products => {
-													return (
-														products.sku ===
-														item.sku
-													);
-												}
-											);
-											cartTotal +=
-												product.price * item.quantity;
-										}
-									);
+									let cartLength = store.cart.length;
 									return (
 										<div className="text-wrap">
 											<span className="small badge badge-danger">
-												${cartTotal}
+												{cartLength}
 											</span>
 										</div>
 									);
