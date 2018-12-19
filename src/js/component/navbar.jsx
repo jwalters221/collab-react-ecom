@@ -2,6 +2,9 @@ import React, { Component } from "react";
 import { withRouter } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { Context } from "../store/appContext.jsx";
+import PropTypes from "prop-types";
+import { Cart } from "../component/cartItem.jsx";
+import { CheckoutCart } from "../component/checkoutCart.jsx";
 
 export class Navbar extends React.Component {
 	render() {
@@ -63,11 +66,32 @@ export class Navbar extends React.Component {
 								</li>
 							</ul>
 
-							<div className="text-wrap">
-								<span className="small badge badge-danger">
-									0
-								</span>
-							</div>
+							<Context.Consumer>
+								{({ store, actions }) => {
+									let cartTotal = 0;
+									store.cart.forEach(
+										(item, index, history) => {
+											let product = store.products.find(
+												products => {
+													return (
+														products.sku ===
+														item.sku
+													);
+												}
+											);
+											cartTotal +=
+												product.price * item.quantity;
+										}
+									);
+									return (
+										<div className="text-wrap">
+											<span className="small badge badge-danger">
+												${cartTotal}
+											</span>
+										</div>
+									);
+								}}
+							</Context.Consumer>
 						</form>
 					</div>
 				</nav>
@@ -75,3 +99,8 @@ export class Navbar extends React.Component {
 		);
 	}
 }
+
+Navbar.propTypes = {
+	match: PropTypes.object,
+	history: PropTypes.object
+};
