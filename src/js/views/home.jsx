@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Post } from "../component/post.jsx";
 import { Carousel } from "../component/carousel.jsx";
 import rigoImage from "../../img/ecommerce.jpg";
 import "../../styles/home.css";
@@ -11,7 +10,7 @@ export class Home extends React.Component {
 		return (
 			<React.Fragment>
 				<Carousel />
-				<Post />
+				
 
 				<hr className="featurette-divider" />
 				<div className="container">
