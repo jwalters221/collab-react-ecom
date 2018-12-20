@@ -33,8 +33,8 @@ export class CartItem extends React.Component {
 									<div className="col-12 col-sm-12 col-md-2 text-center">
 										<img
 											className="img-responsive"
-											src="http://placehold.it/120x80"
-											alt="prewiew"
+											src={product.image}
+											alt="preview"
 											width="120"
 											height="80"
 										/>
