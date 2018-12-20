@@ -28,6 +28,7 @@ export class Layout extends React.Component {
 					<Navbar />
 					<Switch>
 						<Route exact path="/" component={Home} />
+						<Route exact path="/home" component={Home} />
 						<Route path="/demo" component={Demo} />
 						<Route path="/blog" component={Blog} />
 						<Route path="/blogpost" component={BlogPost} />
