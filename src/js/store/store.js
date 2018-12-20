@@ -261,6 +261,8 @@ const getState = ({ getStore, setStore }) => {
 				} else if (quantity > 0) {
 					store.cart[index].quantity += quantity;
 				}
+
+				setStore({ store: store });
 			},
 
 			removeItemFromCart: (index, history) => {
