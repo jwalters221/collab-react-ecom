@@ -1,22 +1,17 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import Featured from "../component/featured.jsx";
-import CarouselHome from "../component/carousel.jsx";
+import { Post } from "../component/post.jsx";
+import { Carousel } from "../component/carousel.jsx";
 import rigoImage from "../../img/ecommerce.jpg";
 import "../../styles/home.css";
 import SignIn from "../component/signin.jsx";
-import "../../styles/home.css";
-import "../../styles/carousel.css";
-import "../../styles/featured.css";
 
 export class Home extends React.Component {
 	render() {
 		return (
 			<React.Fragment>
-				<div className="d-none d-lg-block">
-					<CarouselHome />
-				</div>
-				<Featured />
+				<Carousel />
+				<Post />
 
 				<hr className="featurette-divider" />
 				<div className="container">
