@@ -217,6 +217,7 @@ const getState = ({ getStore, setStore }) => {
 			],
 
 			cart: [
+				/*
 				{
 					sku: "5896802",
 					quantity: 2
@@ -225,6 +226,7 @@ const getState = ({ getStore, setStore }) => {
 					sku: "77650321",
 					quantity: 1
 				}
+				*/
 			]
 		},
 		actions: {
