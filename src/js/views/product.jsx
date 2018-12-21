@@ -4,6 +4,8 @@ import { Link } from "react-router-dom";
 import { Context } from "../store/appContext.jsx";
 import { Rating } from "../component/rating.jsx";
 
+import { price } from "../component/functional/price.jsx";
+
 export class Product extends React.Component {
 	render() {
 		return (
@@ -29,7 +31,7 @@ export class Product extends React.Component {
 									<p>{product.description}</p>
 									<div className="row">
 										<div className="col-4 my-4">
-											<h3>${product.price}</h3>
+											<h3>{price(product.price)}</h3>
 										</div>
 										<div className="col my-4">
 											<form>
