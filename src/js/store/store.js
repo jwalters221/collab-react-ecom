@@ -164,7 +164,7 @@ const getState = ({ getStore, setStore }) => {
 					description:
 						"“Vaping” is short for “vaporization”. Effects are felt immediately and unlike smoking, no combustion or burning takes place. Portable vaporizers are very discreet, as vapor dissipates quickly with minimal odor.",
 					price: 4000,
-					rating: 4.5
+					rating: "4.5"
 				},
 				{
 					category: "medical marijuana",
