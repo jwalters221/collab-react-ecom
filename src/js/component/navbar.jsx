@@ -48,12 +48,33 @@ export class Navbar extends React.Component {
 						</ul>
 						<form className="form-inline my-2 my-lg-0">
 							<ul className="navbar-nav mr-auto">
-								<li className="nav-item active">
-									<Link to="/login" className="nav-link">
-										Login
-									</Link>
-									<span className="sr-only" />
-								</li>
+								<Context.Consumer>
+									{({ store, actions }) => {
+										let message = "";
+										const userStatus = store.users.find(
+											user => {
+												return user.logStatus === true;
+											}
+										);
+										if (userStatus) {
+											message =
+												"Welcome " + userStatus.email;
+										} else {
+											message = "Login";
+										}
+
+										return (
+											<li className="nav-item active">
+												<Link
+													to="/login"
+													className="nav-link">
+													{message}
+												</Link>
+												<span className="sr-only" />
+											</li>
+										);
+									}}
+								</Context.Consumer>
 
 								<li className="nav-item active">
 									<Link to="/cart" className="nav-link">

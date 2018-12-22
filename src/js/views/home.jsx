@@ -4,7 +4,7 @@ import Featured from "../component/featured.jsx";
 import CarouselHome from "../component/carousel.jsx";
 import rigoImage from "../../img/ecommerce.jpg";
 import "../../styles/home.css";
-import SignIn from "../component/signin.jsx";
+
 import "../../styles/home.css";
 import "../../styles/carousel.css";
 import "../../styles/featured.css";
