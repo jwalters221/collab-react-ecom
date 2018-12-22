@@ -56,14 +56,14 @@ class Featured extends React.Component {
 												store.products[randDrone].price
 											)}
 										</p>
-										<p className="font-weight-light">
+										<div className="font-weight-light">
 											<Rating
 												stars={
 													store.products[randDrone]
 														.rating
 												}
 											/>
-										</p>
+										</div>
 
 										<div className="card-footer bg-transparent ">
 											<p className="mb-0">
@@ -112,14 +112,14 @@ class Featured extends React.Component {
 												store.products[randSnow].price
 											)}
 										</p>
-										<p className="font-weight-light">
+										<div className="font-weight-light">
 											<Rating
 												stars={
 													store.products[randSnow]
 														.rating
 												}
 											/>
-										</p>
+										</div>
 										<div className="card-footer bg-transparent ">
 											<p className="mb-0">
 												<Link
@@ -166,14 +166,14 @@ class Featured extends React.Component {
 												store.products[randMale].price
 											)}
 										</p>
-										<p className="font-weight-light">
+										<div className="font-weight-light">
 											<Rating
 												stars={
 													store.products[randMale]
 														.rating
 												}
 											/>
-										</p>
+										</div>
 										<div className="card-footer bg-transparent ">
 											<p className="mb-0">
 												<Link
@@ -220,14 +220,14 @@ class Featured extends React.Component {
 												store.products[randMed].price
 											)}
 										</p>
-										<p className="font-weight-light">
+										<div className="font-weight-light">
 											<Rating
 												stars={
 													store.products[randMed]
 														.rating
 												}
 											/>
-										</p>
+										</div>
 										<div className="card-footer bg-transparent ">
 											<p className="mb-0">
 												<Link
