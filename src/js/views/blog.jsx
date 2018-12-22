@@ -21,6 +21,7 @@ export class Blog extends Component {
 											to="./blogpost"
 											className="post-img">
 											<img
+												className="blogImagePost"
 												src={
 													store.blog[randFeatured]
 														.image
@@ -57,6 +58,7 @@ export class Blog extends Component {
 											className="post-img"
 											to="./blogpost">
 											<img
+												className="blogImagePost"
 												src={store.blog[1].image}
 												alt=""
 											/>
@@ -77,11 +79,12 @@ export class Blog extends Component {
 											</ul>
 										</div>
 
-										<div className="post post-thumb">
+										<div className="post post-thumb mt-2">
 											<Link
 												className="post-img"
 												to="./blogpost">
 												<img
+													className="blogImagePost"
 													src={store.blog[2].image}
 													alt=""
 												/>

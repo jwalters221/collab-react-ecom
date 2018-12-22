@@ -16,8 +16,11 @@ export class BlogPost extends Component {
 								return (
 									<React.Fragment key={index}>
 										<div className="col-lg-12">
-											<div className="post2-img mb-2">
-												<img src={item.image} />
+											<div className="post2 mb-2 ">
+												<img
+													src={item.image}
+													className="blogImagePost2"
+												/>
 											</div>
 											<div className="m-t-2">
 												<h4 className="post-title">

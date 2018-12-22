@@ -7,7 +7,7 @@
   position: relative;
   margin: -50px 0px 0px 3%;
   padding: 5%;
-  background: #fff;
+  background: rgba(8, 8, 8, 0.71);
   z-index: 10;
 }
 
@@ -16,7 +16,7 @@
   overflow: hidden;
 }
 
-.post-img>img {
+.post-img {
   width: 100%;
   -webkit-transition: 1.6s -webkit-transform;
   transition: 1.6s -webkit-transform;
@@ -32,10 +32,12 @@
 
 .post .post-title {
   font-size: 18px;
+  color: #ffffff;
 }
 
 .post .post-title.title-sm {
   font-size: 16px;
+  color: #ffffff;
 }
 
 .post .post-title.title-lg {
@@ -47,7 +49,7 @@
 }
 
 .post-category a {
-  color: #ee4266;
+  color: #ffffff;
   font-weight: 700;
   font-size: 12px;
   text-transform: uppercase;
@@ -118,4 +120,17 @@
 .h4 {
   color:blue;
   
+}
+
+.blogImagePost {
+  width: 100%;
+  -webkit-transition: 1.6s -webkit-transform;
+  transition: 1.6s -webkit-transform;
+  transition: 1.6s transform;
+  transition: 1.6s transform, 1.6s -webkit-transform;
+}
+
+
+.blogImagePost2 {
+  width: 100%;
 }
