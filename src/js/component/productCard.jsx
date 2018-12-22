@@ -3,59 +3,61 @@ import { withRouter } from "react-router-dom";
 import PropTypes from "prop-types";
 import { Context } from "../store/appContext.jsx";
 import { Link } from "react-router-dom";
+import { Rating } from "../component/rating.jsx";
 
-class ProductCard extends React.Component {
-	constructor() {
-		super();
-		this.state = {
-			// initialize your state
-		};
-	}
+import { price } from "../component/functional/price.jsx";
 
+export class ProductCard extends React.Component {
 	render() {
 		return (
-			<div className="container">
-				<div className="row">
-					<Context.Consumer>
-						{({ store, actions }) => {
-							return store.products.map((item, index) => {
-								return (
-									<div className="card col-lg-4" key={index}>
-										<div className="card-header bg-transparent ">
-											{item.category}
-										</div>
-										<img
-											className="card-img-top"
-											src={item.image}
-											alt="Card image cap"
-										/>
+			<Context.Consumer>
+				{({ store, actions }) => {
+					var product = store.products.find(item => {
+						return item.sku == this.props.sku;
+					});
+					return (
+						<div className="card text-center px-2">
+							<div className="card-header bg-transparent pb-2 mb-2 text-capitalize">
+								Category: <h6>{product.category}</h6>
+							</div>
+							<img
+								className="card-img-top"
+								src={product.image}
+								alt="Generic placeholder image"
+								width="140"
+								height="140"
+							/>
+							<h5 className="card-title mt-3 text-truncate">
+								{product.name}
+							</h5>
+							<p className="text-truncate font-weight-light">
+								{product.description}
+							</p>
+							<p className="font-weight-bold">
+								{price(product.price)}
+							</p>
+							<Rating stars={product.rating} />
 
-										<div className="card-body">
-											<h5 className="card-title">
-												{item.name}
-											</h5>
-											<p className="card-text">
-												{item.description}
-											</p>
-											<p className="card-text">
-												<small className="text-muted">
-													Rating:
-													{item.rating}
-												</small>
-											</p>
-										</div>
-										<div className="card-footer bg-transparent">
-											{item.price}
-										</div>
-									</div>
-								);
-							});
-						}}
-					</Context.Consumer>
-				</div>
-			</div>
+							<div className="card-footer bg-transparent ">
+								<p className="mb-0">
+									<Link
+										className="btn btn-success"
+										to={"/product/" + product.sku}
+										role="button">
+										View details &raquo;
+									</Link>
+								</p>
+							</div>
+						</div>
+					);
+				}}
+			</Context.Consumer>
 		);
 	}
 }
 
 export default withRouter(ProductCard);
+
+ProductCard.propTypes = {
+	sku: PropTypes.string
+};

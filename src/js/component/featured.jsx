@@ -4,6 +4,8 @@ import { Link } from "react-router-dom";
 import { Context } from "../store/appContext.jsx";
 import { Rating } from "./rating.jsx";
 
+import { price } from "../component/functional/price.jsx";
+
 class Featured extends React.Component {
 	render() {
 		return (
@@ -50,7 +52,9 @@ class Featured extends React.Component {
 											}
 										</p>
 										<p className="font-weight-bold">
-											${store.products[randDrone].price}
+											{price(
+												store.products[randDrone].price
+											)}
 										</p>
 										<p className="font-weight-light">
 											<Rating
@@ -104,7 +108,9 @@ class Featured extends React.Component {
 											}
 										</p>
 										<p className="font-weight-bold">
-											${store.products[randSnow].price}
+											{price(
+												store.products[randSnow].price
+											)}
 										</p>
 										<p className="font-weight-light">
 											<Rating
@@ -156,7 +162,9 @@ class Featured extends React.Component {
 											}
 										</p>
 										<p className="font-weight-bold">
-											${store.products[randMale].price}
+											{price(
+												store.products[randMale].price
+											)}
 										</p>
 										<p className="font-weight-light">
 											<Rating
@@ -208,7 +216,9 @@ class Featured extends React.Component {
 											}
 										</p>
 										<p className="font-weight-bold">
-											${store.products[randMed].price}
+											{price(
+												store.products[randMed].price
+											)}
 										</p>
 										<p className="font-weight-light">
 											<Rating

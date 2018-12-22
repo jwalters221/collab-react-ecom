@@ -1,18 +1,22 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
+import { Context } from "../store/appContext.jsx";
+import { ProductCard } from "../component/productCard.jsx";
 
 export class Products extends React.Component {
 	render() {
 		return (
 			<div>
-				<h1>Product View</h1>
-				<p>This will be the product page.</p>
+				<div className="h1 text-center mb-4">Products</div>
+				<Context.Consumer className="card-deck">
+					{({ store }) => {
+						return store.products.map((item, index) => {
+							return <ProductCard sku={item.sku} key={index} />;
+						});
+					}}
+				</Context.Consumer>
 			</div>
 		);
 	}
 }
-
-Products.propTypes = {
-	match: PropTypes.object
-};

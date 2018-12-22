@@ -6,6 +6,8 @@ import { CartItem } from "../component/cartItem.jsx";
 import "../../styles/cart.css";
 import { withRouter } from "react-router-dom";
 
+import { price } from "../component/functional/price.jsx";
+
 export class Cart extends React.Component {
 	render() {
 		return (
@@ -94,7 +96,8 @@ export class Cart extends React.Component {
 									);
 									return (
 										<div className="pull-right margin-5">
-											Total price: <b>${cartTotal}</b>
+											Total price:{" "}
+											<b>{price(cartTotal)}</b>
 										</div>
 									);
 								}}

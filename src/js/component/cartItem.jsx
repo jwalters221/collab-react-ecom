@@ -5,6 +5,8 @@ import { Context } from "../store/appContext.jsx";
 import "../../styles/cart.css";
 import PropTypes from "prop-types";
 
+import { price } from "../component/functional/price.jsx";
+
 const ColoredLine = () => (
 	<hr
 		style={{
@@ -51,7 +53,7 @@ export class CartItem extends React.Component {
 										<div className="col-3 col-sm-3 col-md-6 text-md-right padding-top-5">
 											<h6>
 												<strong>
-													${product.price}{" "}
+													{price(product.price)}{" "}
 													<span className="text-muted">
 														x
 													</span>

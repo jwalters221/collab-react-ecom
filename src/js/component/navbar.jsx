@@ -6,6 +6,8 @@ import PropTypes from "prop-types";
 import { Cart } from "../component/cartItem.jsx";
 import { CheckoutCart } from "../component/checkoutCart.jsx";
 
+import { price } from "../component/functional/price.jsx";
+
 export class Navbar extends React.Component {
 	render() {
 		return (
@@ -81,7 +83,7 @@ export class Navbar extends React.Component {
 									return (
 										<div className="text-wrap">
 											<span className="small badge badge-danger">
-												{cartTotal}
+												{price(cartTotal)}
 											</span>
 										</div>
 									);

@@ -27,5 +27,5 @@ export class Rating extends React.Component {
 }
 
 Rating.propTypes = {
-	stars: PropTypes.string
+	stars: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
 };
