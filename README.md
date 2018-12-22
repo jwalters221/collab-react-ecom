@@ -54,7 +54,15 @@ import {
   CarouselCaption
 } from 'reactstrap';
 ```
+### To Login you can use these 2 Users:
 
+User 1:
+- `email: "john@gmail.com"` as a username.
+- `password: "1234"` 
+
+User 2:
+- `email: "mark@gmail.com"` as a username.
+- `password: "5678"` 
 
 
 Now you are ready to use the imported reactstrap components within your component hierarchy defined in the render method. 
